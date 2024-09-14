@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkout form</title>
+    </head>
+    <body>
+        <div id="header">
+            <h2>Checkout form</h2>
+            <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>    
+        </div>
+        <div id="side">
+            <h1>Your cart</h1>
+            <div>
+                Product name $12<br/>
+                Brief description
+            </div>
+            <div>
+                Second product $8<br/>
+                Brief description
+            </div>
+            <div>
+                Third item $5<br/>
+                Brief description
+            </div>
+            <div>
+                Total (USD) $20
+            </div>
+            <input type="text" placeholder="Promo code"/>
+            <input type="submit" value="Redeem"/>
+        </div>
+        <div id="section">
+            <h2>Billing address</h2>
+            <form>
+                <lable for="first">First name</lable>
+                <lable for="last">Last name</lable>
+                <br/>
+                <input type="text" name="first"/>
+                <input type="text" name="last"/>
+                <br/>
+                <label for="user">Username</label>
+                <br/>
+                <input type="text" name="user"/>
+                <br/>
+                <lable for="email">Email</lable>
+                (optional) <br/>
+                <input type="text" name="email"/>
+                <br/>
+                <lable for="address">Address</lable>
+                <br/>
+                <input type="text" name="address"/>
+                <br/>
+                <lable for="address2">Address 2</lable>
+                <br/>
+                <input type="text" name="address2"/>
+                <br/>
+                <lable for="country">Country</lable>
+                <lable for="state">State</lable>
+                <lable for="zip">Zip</lable>
+                <br/>
+                <select name="country">
+                    <option>Choose...</option>
+                    <option>United States</option>
+                </select>
+                <select name="state">
+                    <option>Choose...</option>
+                    <option>California</option>
+                </select>
+                <input type="text" name="zip"/>
+                <br/>
+                <input type="checkbox" name="shipping"/>
+                <lable for="shipping">Shipping address is the same as my billing address</lable>
+                <br/>
+                <input type="checkbox" name="save"/>
+                <lable for="save">Save this information for next time</lable>
+                <h2>Payment</h2>
+                <input type="radio" id="credit" name="payment"/>
+                <lable for="credit">Credit card</lable>
+                <br/>
+                <input type="radio" id="debit" name="payment"/>
+                <lable for="debit">Debit card</lable>
+                <br/>
+                <input type="radio" id="paypal" name="payment"/>
+                <lable for="paypal">PayPal</lable>
+                <br/>
+                <label for="cardname">Name on card</label>
+                <label for="number">Credit card number</label>
+                <br/>
+                <input type="text" name="cardname"/>
+                <input type="text" name="number"/>
+                <br>
+                Full name as displayed on card
+                <br/>
+                <label for="expire">Expiration</label>
+                <label for="cvv">CVV</label>
+                <br/>
+                <input type="text" name="expire"/>
+                <input type="text" name="cvv"/>
+                <br/>
+                <input type="submit" value="Continue to checkout"/>
+            </form>
+        </div>
+        <div id="footer">
+            <p>© 2017-2022 Company Name</p>
+            <a href="form_nostyle.html">Privacy</a>
+            <a href="form_nostyle.html">Terms</a>
+            <a href="form_nostyle.html">Support</a>
+        </div>
+    </body>
+</html>

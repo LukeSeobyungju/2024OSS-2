@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Web Page</title>
+        <script>
+            function add(){
+                var input = document.getElementById("in");
+                var output = document.getElementById("main");
+                output.innerHTML += "<p>"+input.value+"</p>";
+                input.value = null;
+            }
+            function clean(){
+                var output = document.getElementById("main");
+                output.innerHTML ="";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Dynamic Web Page</h1>
+        <input type="text" id="in"/>
+        <button onclick="add()">ADD</button>
+        <button onclick="clean()">Clear</button>
+        <div id="main"></div>
+    </body>
+</html>

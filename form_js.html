@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkout form</title>
+        <link rel="shortcut icon" href="image.png">
+        <style>
+            body{
+                margin-left: 20%;
+                margin-right: 20%;
+                margin-top: 50px;
+            }
+            #header{
+                text-align: center;
+            }
+            #side{
+                width:25%;
+                float:right;
+                text-align: left;
+            }
+            #section{
+                width:75%;
+                float:left;
+            }
+            #footer{
+                padding: 0;
+            }
+            .middle{
+                display: inline-block;
+                width:30%;
+                padding:10px;
+                margin-right:2px;
+            }
+            .long{
+                display: inline-block;
+                width:65%;
+                padding:10px;
+            }
+            .else{
+                display: inline-block;
+                width:20%;
+                padding: 10px;
+            }
+            .line{
+                width:70%;
+                margin: 20px 0 20px 0;
+            }
+            .other{
+                display: inline-block;
+                width:20%;
+                padding:10px;
+            }
+            #button{
+                width:70%;
+                padding:10px;
+                border-radius: 5px;
+                border:0;
+                background-color: rgb(16, 104, 255);
+                color:white;
+                font-size: larger;
+            }
+            .cart{
+                border-style: solid;
+                padding:10px;
+                border-width:thin;
+                margin-bottom:-1px;
+            }
+            #promo{
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 5px;
+                margin-top:30px;
+                padding:10px;
+            }
+            #pro{
+                padding: 10px;
+                width: 50%;
+            }
+            #red{
+                padding: 10px;
+                background-color: rgb(106, 104, 104);
+                color: white;
+            }
+            input{
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 5px;
+            }
+            h1{
+                font-weight:400;
+            }
+            p{
+                font-size: large;
+            }
+            #your{
+                text-align: left;
+                color:rgb(16, 104, 255);
+                margin-bottom: 15px;
+                font-weight:500;
+            }
+            #three{
+                margin-top:0;
+                float:right;
+                color:white;
+                padding: 0 15px 5px 15px;
+                background-color: rgb(16, 104, 255);
+                border-radius: 30px;
+            }
+            .cost{
+                float:right;
+            }
+            #ppp{
+                color:green;
+                border-color: black;
+            }
+            #twen{
+                font-weight: bold;
+            }
+        </style>
+
+        <script>
+            function vali(){
+                var a=document.fff.user;
+                if(a.length<2){
+                    alert("username must be >=2");
+                    a.focus();
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="image.png" width="70px"/>
+            <h1>Checkout form</h1>
+            <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>    
+        </div>
+        <div id="side">
+            <div>
+                <h2 id="three">3</h2>
+                <h2 id="your">Your cart</h2>
+            </div>
+            <div class="cart">
+                <span class="cost">$12</span>
+                <span>Product name</span><br/>
+                <small>Brief description</small>
+            </div>
+            <div class="cart">
+                <span class="cost">$8</span>
+                <span>Second product</span><br/>
+                <small>Brief description</small>
+            </div>
+            <div class="cart">
+                <span class="cost">$5</span>
+                <span>Third item</span><br/>
+                <small>Brief description</small>
+            </div>
+            <div class="cart" id="ppp">
+                <span class="cost">-$5</span>
+                <span>Promo code</span><br/>
+                <small>EXAMPLECODE</small>
+            </div>
+            <div class="cart">
+                <span class="cost" id="twen">$20</span>
+                <span>Total (USD)</span>
+            </div>
+            <div id="promo">
+                <input type="text" placeholder="Promo code" id="pro"/>
+                <input type="submit" value="Redeem" id="red"/>
+            </div>
+            
+        </div>
+        <div id="section">
+            <h2>Billing address</h2>
+            <form name="fff" method="post" onsubmit="vali();">
+                <lable for="first" class="middle">First name</lable>
+                <lable for="last" class="middle">Last name</lable>
+                <br/>
+                <input type="text" name="first" class="middle" required/>
+                <input type="text" name="last" class="middle" required/>
+                <br/>
+                <label for="user" class="long">Username</label>
+                <br/>
+                <input type="text" name="user" class="long" placeholder="Username" required/>
+                <br/>
+                <lable for="email" class="long">Email (optional)</lable>
+                <br/>
+                <input type="email" name="email" class="long" placeholder="you@example.com"/>
+                <br/>
+                <lable for="address" class="long">Address</lable>
+                <br/>
+                <input type="text" name="address" class="long" placeholder="1234 Main St" required/>
+                <br/>
+                <lable for="address2" class="long">Address 2 (optional)</lable>
+                <br/>
+                <input type="text" name="address2" class="long" placeholder="Apartment or suite"/>
+                <br/>
+                <lable for="country" class="else">Country</lable>
+                <lable for="state" class="else">State</lable>
+                <lable for="zip" class="else">Zip</lable>
+                <br/>
+                <select name="country" class="else" required>
+                    <option>Choose...</option>
+                    <option>United States</option>
+                </select>
+                <select name="state" class="else" required>
+                    <option>Choose...</option>
+                    <option>California</option>
+                </select>
+                <input type="text" name="zip" class="else" required/>
+                <br/>
+                <hr class="line">
+                <input type="checkbox" name="shipping"/>
+                <lable for="shipping">Shipping address is the same as my billing address</lable>
+                <br/>
+                <input type="checkbox" name="save"/>
+                <lable for="save">Save this information for next time</lable>
+                <hr class="line">
+                <h2>Payment</h2>
+                <input type="radio" id="credit" name="payment"/>
+                <lable for="credit">Credit card</lable>
+                <br/>
+                <input type="radio" id="debit" name="payment"/>
+                <lable for="debit">Debit card</lable>
+                <br/>
+                <input type="radio" id="paypal" name="payment"/>
+                <lable for="paypal">PayPal</lable>
+                <br/><br/>
+                <label for="cardname" class="middle">Name on card</label>
+                <label for="number" class="middle">Credit card number</label>
+                <br/>
+                <input type="text" name="cardname" class="middle" required/>
+                <input type="number" name="number" class="middle" required/>
+                <br>
+                <small>Full name as displayed on card</small>
+                <br/>
+                <label for="expire" class="other">Expiration</label>
+                <label for="cvv" class="other">CVV</label>
+                <br/>
+                <input type="date" name="expire" class="other" required/>
+                <input type="text" name="cvv" class="other" required/>
+                <br/>
+                <hr class="line">
+                <input type="submit" value="Continue to checkout" id="button"/>
+            </form>
+        </div>
+        <div id="footer">
+            © 2017-2022 Company Name
+            <a href="form_js.html">Privacy</a>
+            <a href="form_js.html">Terms</a>
+            <a href="form_js.html">Support</a>
+        </div>
+    </body>
+</html>
