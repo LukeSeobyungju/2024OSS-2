@@ -1,13 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head></head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>index</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="my.css">
+        <style>
+          .td_title{
+            cursor:pointer;
+          }
+        </style>
+    </head>
     <body>
-        <a href="form_nostyle.html">form_nostyle.html</a>
-        <br/>
-        <a href="form_style.html">form_style.html</a>
-        <br/>
-        <a href="form_js.html">form_js.html</a>
-        <br/>
-        <a href="form.html">form.html</a>
+        <div class="container text-center">
+            <h1 style="margin-top:20px; text-align:left;">Team Member List</h1>
+            <button type="button" class="btn btn-primary" style="float:right;" onclick="location.href='add.html'">ADD</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td class="td_title" onclick="location.href='view.html'">서병주</td>
+                        <td>M</td>
+                        <td>22100356</td>
+                        <td>팀장</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>정유성</td>
+                        <td>M</td>
+                        <td>22100000</td>
+                        <td>부팀장</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>김서현</td>
+                        <td>F</td>
+                        <td>22300000</td>
+                        <td>부팀장</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>김예령</td>
+                        <td>M</td>
+                        <td>22100000</td>
+                        <td>서기</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>문하경</td>
+                        <td>F</td>
+                        <td>22300000</td>
+                        <td>회계</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>유시온</td>
+                        <td>M</td>
+                        <td>22300000</td>
+                        <td>기도회리더</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>이호연</td>
+                        <td>M</td>
+                        <td>22000000</td>
+                        <td>BBQ팀</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>정감송</td>
+                        <td>F</td>
+                        <td>22400000</td>
+                        <td>중파/기파</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>김건휘</td>
+                        <td>M</td>
+                        <td>22000000</td>
+                        <td>무플방지위원회</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>이수아</td>
+                        <td>F</td>
+                        <td>22400000</td>
+                        <td>날씨요정</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
