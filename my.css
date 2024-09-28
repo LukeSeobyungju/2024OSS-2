@@ -1,6 +1,18 @@
-@media (max-width: 400px){
-    
+@media (max-width: 440px){
+    .tsize{
+        font-size: 0.9em;
+    }
 }
-@media (max-width: 700px){
-    
+
+
+.td_title{
+    cursor:pointer;
+}
+
+.heading{
+    margin-top:20px;
+}
+
+.buttonfloat{
+    float:right;
 }
