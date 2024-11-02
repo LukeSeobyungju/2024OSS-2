@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+        <style>
+            .block{
+                margin: 30px;
+            }
+        </style>
+
+        <script>
+            function clearing(){
+                $("#id").val("");
+                $("#name").val("");
+                $("#age").val("");
+                $("#major").val("");
+            }
+
+            function read(){
+                const xhr=new XMLHttpRequest();
+                xhr.open("GET","http://localhost:3000/TeamMembers");
+                xhr.setRequestHeader("content-type", "application/json");
+                xhr.send();
+                xhr.onload=()=>{
+                    if(xhr.status==200){
+                        $("#field").html("");
+                        let data=JSON.parse(xhr.response);
+                        data.forEach(element => {
+                            $("#field").append("<div>"+element.id+" "+element.name+" "+element.age+" "+element.major+"</div>");
+                        });
+                    }
+                }
+
+            }
+            function create(){
+                const xhr=new XMLHttpRequest();
+                xhr.open("POST","http://localhost:3000/TeamMembers");
+                xhr.setRequestHeader("content-type", "application/json");
+                let data={id:$("#id").val(),name:$("#name").val(),age:$("#age").val(),major:$("#major").val()};
+                xhr.send(JSON.stringify(data));
+                xhr.onload=()=>{
+                    if(xhr.status==201){
+                        alert("등록 성공!");
+                        read();
+                        clearing();
+                    }
+                }
+            }
+
+            function update(){
+                let id=$("#id").val();
+                const xhr=new XMLHttpRequest();
+                xhr.open("PUT","http://localhost:3000/TeamMembers/"+id);
+                xhr.setRequestHeader("content-type", "application/json");
+                let data={id:$("#id").val(),name:$("#name").val(),age:$("#age").val(),major:$("#major").val()};
+                xhr.send(JSON.stringify(data));
+                xhr.onload=()=>{
+                    if(xhr.status==200){
+                        alert("수정 성공!");
+                        read();
+                        clearing();
+                    }
+                }
+            }
+
+            function del(){
+                let id=$("#id").val();
+                const xhr=new XMLHttpRequest();
+                xhr.open("DELETE","http://localhost:3000/TeamMembers/"+id);
+                xhr.setRequestHeader("content-type", "application/json");
+                xhr.onload=()=>{
+                    if(xhr.status==200){
+                        alert("삭제 성공!");
+                        read();
+                        clearing();
+                    }
+                }
+                xhr.send(null);
+            }
+        </script>
+    </head>
+    
+    <body>
+        <div class="block">
+            <button onclick="read()">GET DATA</button>
+        </div>
+        <div id="field" class="block">DATA</div>
+        <div class="block">
+            <label for="id">id</label>
+            <input type="text" id="id"/>
+            <label for="name">name</label>
+            <input type="text" id="name"/>
+            <br/>
+            <label for="age">age</label>
+            <input type="text" id="age"/>
+            <label for="major">major</label>
+            <input type="text" id="major"/>
+        </div>
+        <div class="block">
+            <button onclick="create()">ADD</button>
+            <button onclick="update()">EDIT</button>
+            <button onclick="del()">DELETE</button>
+        </div>
+        
+        
+    </body>
+</html>
